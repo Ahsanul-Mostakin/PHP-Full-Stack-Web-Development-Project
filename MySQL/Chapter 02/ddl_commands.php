@@ -10,8 +10,9 @@
 $servername="localhost"; //$servername = "localhost";
 $username="root";
 $user_pwd="";
+$db="student";
 
-$con= mysqli_connect($servername,$username,$user_pwd);
+$con= mysqli_connect($servername,$username,$user_pwd,$db);
 
 if(!$con){
     die("Connection is failed.".mysqli_connect_error());
@@ -20,9 +21,18 @@ else{
     echo "Connection is created";
 }
 
-$q= "CREATE DATABASE mostakin";
-mysqli_query($con,$q);
-
+ $q= "CREATE DATABASE student";
+ mysqli_query($con,$q);
+$q_std_info = "create table std_info(
+    std_id int(10) NOT NULL,
+    std_name VARCHAR(100),
+    std_father VARCHAR(50),
+    std_city VARCHAR(10),
+    std_marks int(50),
+    std_status VARCHAR(10),
+    primary key(std_id)
+    )";
+    mysqli_query($con,$q_std_info);
 ?>
 </body>
 </html>
