@@ -7,8 +7,8 @@
 </head>
 <body>
 <?php
-$servername="localhost"; //$servername = "localhost";
-$username="root";        //User name
+$servername="localhost"; 
+$username="root";        
 $user_pwd="";
 $db="student";
 
